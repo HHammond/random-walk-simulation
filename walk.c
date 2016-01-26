@@ -24,13 +24,13 @@ static const int8_t CHANGE_LOOKUP[2] = {-1, 1};
 
 /* Run random walk and count number of times walk crosses over zero.
  *
- * :params N: number of iterations in the simulation
+ * :params iterations: number of iterations in the simulation
  */
 int run_simulation(const size_t iterations){
     register int32_t value = 0;
     register uint32_t switches = 0;
     register State current = None,
-             previous = None;
+                   previous = None;
 
     for(size_t i = 0; i < iterations; ++i){
         value += CHANGE_LOOKUP[rand() % 2];
